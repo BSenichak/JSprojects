@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        let opasity = 0.9;
+        $("div").click(function(){
+            $(this).fadeTo("0.1s", opasity, ()=>{
+                opasity -=0.1
+                if(opasity <= 0)opasity = 1;
+            })
+        })
+    </script>
+</body>
+</html>

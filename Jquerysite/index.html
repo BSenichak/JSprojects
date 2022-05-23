@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo">BS</div>
+            <div class="btn">+</div>
+            <nav>
+                <div class="item i1 active">About</div>
+                <div class="item i2">Hobbies</div>
+                <div class="item i3">Skills</div>
+                <div class="item i4">Contacts</div>
+                <div class="item i5">FAQ</div>
+            </nav>
+        </header>
+        <main>
+            
+        </main>
+    </div>
+    <script>
+        $("main").hide();
+        page = [
+            `<h1>About</h1><p><img src="https://image.shutterstock.com/image-photo/kiev-ukraine-march-21-2015-260nw-269735093.jpg" alt="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde vero est soluta eum molestiae ex ipsam ullam, doloremque exercitationem neque, magni delectus, at nisi odio! Illum, numquam dicta accusamus ipsum rem voluptatibus tempora accusantium dolor quas labore qui voluptatum soluta placeat perspiciatis debitis sapiente corrupti animi molestias itaque voluptates cupiditate veritatis praesentium. Possimus quo maxime aspernatur cupiditate mollitia assumenda ea dolor. Repellat repudiandae quo voluptatibus laboriosam ea ad earum repellendus vero, corporis explicabo quasi error accusamus, expedita quos tenetur ducimus quibusdam, eum rerum ratione optio consequuntur? Animi odio dolores doloribus voluptatibus in expedita voluptatem illo nemo cupiditate! Nihil ex repellat magni dignissimos! Sit eligendi, animi iure pariatur, rerum exercitationem cupiditate laboriosam libero et vel qui aliquid odio a cumque cum obcaecati id porro distinctio veritatis minus totam inventore. Voluptatem recusandae porro ab maiores autem! Officia in quis illo fugiat et rerum, quia nostrum nam atque repudiandae voluptas nemo fuga voluptatem expedita suscipit doloremque ad, a ea nesciunt harum veniam labore! Nisi cumque quasi perspiciatis, illum temporibus exercitationem quas quae illo itaque ducimus, doloremque tempore est aspernatur enim dicta accusamus maxime ullam assumenda omnis at, facilis esse ut. Rem cupiditate eos voluptates, vero veritatis, debitis inventore voluptas quo eius, facilis excepturi.</p>`,
+            `<h1>Hobbies</h1><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/BMW_logo_%28gray%29.svg/480px-BMW_logo_%28gray%29.svg.png" alt="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde vero est soluta eum molestiae ex ipsam ullam, doloremque exercitationem neque, magni delectus, at nisi odio! Illum, numquam dicta accusamus ipsum rem voluptatibus tempora accusantium dolor quas labore qui voluptatum soluta placeat perspiciatis debitis sapiente corrupti animi molestias itaque voluptates cupiditate veritatis praesentium. Possimus quo maxime aspernatur cupiditate mollitia assumenda ea dolor. Repellat repudiandae quo voluptatibus laboriosam ea ad earum repellendus vero, corporis explicabo quasi error accusamus, expedita quos tenetur ducimus quibusdam, eum rerum ratione optio consequuntur? Animi odio dolores doloribus voluptatibus in expedita voluptatem illo nemo cupiditate! Nihil ex repellat magni dignissimos! Sit eligendi, animi iure pariatur, rerum exercitationem cupiditate laboriosam libero et vel qui aliquid odio a cumque cum obcaecati id porro distinctio veritatis minus totam inventore. Voluptatem recusandae porro ab maiores autem! Officia in quis illo fugiat et rerum, quia nostrum nam atque repudiandae voluptas nemo fuga voluptatem expedita suscipit doloremque ad, a ea nesciunt harum veniam labore! Nisi cumque quasi perspiciatis, illum temporibus exercitationem quas quae illo itaque ducimus, doloremque tempore est aspernatur enim dicta accusamus maxime ullam assumenda omnis at, facilis esse ut. Rem cupiditate eos voluptates, vero veritatis, debitis inventore voluptas quo eius, facilis excepturi.</p>`,
+            `<h1>Skils</h1><p><img src="https://logos-world.net/wp-content/uploads/2020/12/Lays-Logo.png" alt="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde vero est soluta eum molestiae ex ipsam ullam, doloremque exercitationem neque, magni delectus, at nisi odio! Illum, numquam dicta accusamus ipsum rem voluptatibus tempora accusantium dolor quas labore qui voluptatum soluta placeat perspiciatis debitis sapiente corrupti animi molestias itaque voluptates cupiditate veritatis praesentium. Possimus quo maxime aspernatur cupiditate mollitia assumenda ea dolor. Repellat repudiandae quo voluptatibus laboriosam ea ad earum repellendus vero, corporis explicabo quasi error accusamus, expedita quos tenetur ducimus quibusdam, eum rerum ratione optio consequuntur? Animi odio dolores doloribus voluptatibus in expedita voluptatem illo nemo cupiditate! Nihil ex repellat magni dignissimos! Sit eligendi, animi iure pariatur, rerum exercitationem cupiditate laboriosam libero et vel qui aliquid odio a cumque cum obcaecati id porro distinctio veritatis minus totam inventore. Voluptatem recusandae porro ab maiores autem! Officia in quis illo fugiat et rerum, quia nostrum nam atque repudiandae voluptas nemo fuga voluptatem expedita suscipit doloremque ad, a ea nesciunt harum veniam labore! Nisi cumque quasi perspiciatis, illum temporibus exercitationem quas quae illo itaque ducimus, doloremque tempore est aspernatur enim dicta accusamus maxime ullam assumenda omnis at, facilis esse ut. Rem cupiditate eos voluptates, vero veritatis, debitis inventore voluptas quo eius, facilis excepturi.</p>`,
+            `<h1>Contacts</h1><p><img src="https://pngicon.ru/file/uploads/Logo-Amazon.png" alt="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde vero est soluta eum molestiae ex ipsam ullam, doloremque exercitationem neque, magni delectus, at nisi odio! Illum, numquam dicta accusamus ipsum rem voluptatibus tempora accusantium dolor quas labore qui voluptatum soluta placeat perspiciatis debitis sapiente corrupti animi molestias itaque voluptates cupiditate veritatis praesentium. Possimus quo maxime aspernatur cupiditate mollitia assumenda ea dolor. Repellat repudiandae quo voluptatibus laboriosam ea ad earum repellendus vero, corporis explicabo quasi error accusamus, expedita quos tenetur ducimus quibusdam, eum rerum ratione optio consequuntur? Animi odio dolores doloribus voluptatibus in expedita voluptatem illo nemo cupiditate! Nihil ex repellat magni dignissimos! Sit eligendi, animi iure pariatur, rerum exercitationem cupiditate laboriosam libero et vel qui aliquid odio a cumque cum obcaecati id porro distinctio veritatis minus totam inventore. Voluptatem recusandae porro ab maiores autem! Officia in quis illo fugiat et rerum, quia nostrum nam atque repudiandae voluptas nemo fuga voluptatem expedita suscipit doloremque ad, a ea nesciunt harum veniam labore! Nisi cumque quasi perspiciatis, illum temporibus exercitationem quas quae illo itaque ducimus, doloremque tempore est aspernatur enim dicta accusamus maxime ullam assumenda omnis at, facilis esse ut. Rem cupiditate eos voluptates, vero veritatis, debitis inventore voluptas quo eius, facilis excepturi.</p>`,
+            `<h1>FAQ</h1><p><img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/mr-bread-logo-design-template-8a8bf7264deccf537f8dd318785ebd6f_screen.jpg?ts=1579209248" alt="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde vero est soluta eum molestiae ex ipsam ullam, doloremque exercitationem neque, magni delectus, at nisi odio! Illum, numquam dicta accusamus ipsum rem voluptatibus tempora accusantium dolor quas labore qui voluptatum soluta placeat perspiciatis debitis sapiente corrupti animi molestias itaque voluptates cupiditate veritatis praesentium. Possimus quo maxime aspernatur cupiditate mollitia assumenda ea dolor. Repellat repudiandae quo voluptatibus laboriosam ea ad earum repellendus vero, corporis explicabo quasi error accusamus, expedita quos tenetur ducimus quibusdam, eum rerum ratione optio consequuntur? Animi odio dolores doloribus voluptatibus in expedita voluptatem illo nemo cupiditate! Nihil ex repellat magni dignissimos! Sit eligendi, animi iure pariatur, rerum exercitationem cupiditate laboriosam libero et vel qui aliquid odio a cumque cum obcaecati id porro distinctio veritatis minus totam inventore. Voluptatem recusandae porro ab maiores autem! Officia in quis illo fugiat et rerum, quia nostrum nam atque repudiandae voluptas nemo fuga voluptatem expedita suscipit doloremque ad, a ea nesciunt harum veniam labore! Nisi cumque quasi perspiciatis, illum temporibus exercitationem quas quae illo itaque ducimus, doloremque tempore est aspernatur enim dicta accusamus maxime ullam assumenda omnis at, facilis esse ut. Rem cupiditate eos voluptates, vero veritatis, debitis inventore voluptas quo eius, facilis excepturi.</p>`,
+        ]
+        let active = 0; 
+
+        $(".item").hover(function(){
+            $(this).toggleClass("yellow");
+        })
+
+        $(".item").click(function(){
+            $(".item").removeClass("active")
+            $(this).addClass("active")
+            active = $(this).attr('class')[6]-1;
+            $("main").html(page[active])
+            $("main").show();
+        })
+
+        if($(window).width() <= 500){
+            //$("nav").hide();
+            $(".item").css({"borderRadius": "5px", "height" : "auto", "padding" : "5px", "margin":"0 auto"})
+            $("nav").css({"margin-bottom":"50px"})
+            $('header div').css({"width": "100%", "text-align":"center"})
+            $(".btn").show()
+        }
+        else{
+            $(".btn").hide()
+        }
+
+        $(".btn").click(function(){
+            $("nav").toggle(400)
+        })
+
+        
+        
+        
+
+    </script>
+</body>
+</html>

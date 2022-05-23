@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .wp {
+            display: flex;
+        }
+        .wp div {
+            height: 100px;
+            width: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid black;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+    .d1 {
+        background-color: yellow;
+    }
+    .d2 {
+        background-color: green;
+    }
+    .d3 {
+        background-color: black;
+        color: white;
+    }
+    .d4 {
+        background-color: purple;
+        color: white;
+    }
+    .tog {
+        padding: 10px;
+        background-color: gray;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 300px;
+        text-align: center;
+    }
+    .togp {
+        padding: 10px;
+        background-color: rgb(195, 195, 195);
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 300px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+    </style>
+</head>
+<body>
+    <div class="wp">
+        <div class="d1">i will hide <b>slow</b></div>
+        <div class="d2">i will hide <b>fast</b></div>
+        <div class="d3">i will hide <b>in 3 seconds</b></div>
+        <div class="d4">i will hide <b>in 1 second and call the function alert</b></div>
+        <div class="d5">Return all boxes</div>
+    </div>
+    <div class="tog">
+        click for hide/show block
+    </div>
+    <div class="togp">
+        nofication panel
+    </div>
+    <script>
+        $(".d1").click(function(){
+            $(this).hide("0.5s")
+        })
+        $(".d2").click(function(){
+            $(this).hide()
+        })
+        $(".d3").click(function(){
+            $(this).hide("3s")
+        })
+        $(".d4").click(function(){
+            $(this).hide("1s", ()=> alert("the box4 is hidden"))
+        })
+        $(".d5").click(function(){
+            $(".d1").show();
+            $(".d2").show();
+            $(".d3").show();
+            $(".d4").show();
+        })
+        $(".tog").click(function(){
+            $(".togp").toggle();
+        })
+    </script>
+</body>
+</html>

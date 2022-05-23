@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .wrapper{
+            width: 500px;
+            margin: 50px auto;
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background-color: white;
+            border-radius: 0 0 5px 5px;
+        }
+
+        label, input, div {
+            margin: 0 15px;
+        }
+
+        input {
+            padding: 5px;
+        }
+
+        header{
+            background-color: blue;
+            text-align: center;
+            padding: 10px;
+            color: white;
+            font-size: 20px;
+            font-weight: 1000;
+            box-shadow: 0 3px rgb(185, 185, 185);
+            margin-bottom: 20px;
+            border-radius: 5px 5px 0 0;
+        }
+        form div {
+            color: red;
+            font-weight: 1000;
+        }
+        input[type="submit"]{
+            background-color: aqua;
+            border: none;
+            border-radius: 5px;
+            width: 50%;
+            margin: 20px auto;
+        }
+        .info {
+            color: black;
+        }
+        body {
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <form action="">
+            <header>Password check</header>
+            <label for="login">login: </label>
+            <input type="text" id="login">
+            <label for="password">Password:</label>
+            <input type="password" id="password">
+            <div id="nl">Password no letters</div>
+            <div id="nc">Password no capital letters</div>
+            <div id="nd">Password has no digit</div>
+            <div id="ncc">Password less than 8 characters</div>
+            <input type="submit" value="Submit">
+            <div class="info">
+                <b>The password must much the criterias</b><br>
+                <ul>
+                    <li>At least <b>one letter</b></li>
+                    <li>At least <b>one capital letter</b></li>
+                    <li>At least <b>one digit</b></li>
+                    <li>Be more than <b>8 characters</b></li>
+                </ul>
+            </div>
+        </form>
+    </div>
+    <script>
+        $("#nl").hide();
+        $("#nc").hide();
+        $("#nd").hide();
+        $("#ncc").hide();
+        $("#password").change(function(){
+            let text = $(this).val();
+            let cr1 = 0;
+            let cr2 = 0;
+            let cr3 = 0;
+            let cr4 = 0;
+            for(let i = 0; i < text.length; i++){
+                let ch = text.charCodeAt(i)
+                if(ch >= 65 && ch <= 90 || ch >= 97 && ch <= 122) cr1 += 1;
+                if(ch >= 65 && ch <= 90 ) cr2 += 1;
+                if(ch >= 48 && ch <= 57) cr3 += 1;  
+            }
+            if(text.length >= 8) cr4 += 1;
+            if(cr1 == 0)$("#nl").show();
+            else $("#nl").hide();
+            if(cr2 == 0) $("#nc").show();
+            else $("#nc").hide();
+            if(cr3 == 0) $("#nd").show();
+            else $("#nd").hide();
+            if(cr4 == 0) $("#ncc").show();
+            else $("#ncc").hide();
+            
+        })
+    </script>
+</body>
+</html>

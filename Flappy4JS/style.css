@@ -1,0 +1,41 @@
+body {
+    text-align: center;
+    font-size: 30px;
+    height: 100vh;
+    background: linear-gradient(45deg, blue, purple);
+}
+
+canvas {
+    box-shadow: 0 0 10px black;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+span:nth-child(2){
+    margin-left: 100px;
+}
+
+div {
+    margin: 30px;
+}
+
+#btn {
+    padding: 5px;
+    background-color: orange;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#dark {
+    position: absolute;
+    top: 99px;
+    width: 256px;
+    height: 512px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
