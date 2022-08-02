@@ -1,14 +1,15 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 
 export class Nav extends Component {
   render() {
     return (
       <nav className="nav">
         <div className="nav_item">
-          <a href="http://google.com">Profile</a>
+          <NavLink to="/profile">Profile</NavLink>
         </div>
         <div className="nav_item">
-          <a href="http://google.com">Messages</a>
+          <NavLink to="/dialogs">Messages</NavLink>
         </div>
         <div className="nav_item">
           <a href="http://google.com">News</a>
@@ -23,5 +24,5 @@ export class Nav extends Component {
     );
   }
 }
-
+ 
 export default Nav;
