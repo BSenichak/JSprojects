@@ -2,6 +2,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family:sans-serif;
+}
+
+body {
+  background: linear-gradient(to right ,#ad8cea, #50dfb2);
 }
 
 .app-wrapper {
@@ -31,7 +36,7 @@
   color: rgba(0, 0, 0, 0.5);
 }
 
-.header img {
+.header_img {
   height: 100%;
   border-radius: 50%;
   padding: 5px;
@@ -47,7 +52,7 @@
   gap: 5px;
 }
 
-nav a {
+.nav_item a {
   text-decoration: none;
   color: black;
   font-size: 15pt;
@@ -68,4 +73,96 @@ nav a {
   object-fit: cover;
   object-position: center;
   
+}
+
+.user {
+  display: flex;
+  gap: 50px;
+}
+
+.user_img {
+  width: 20%;
+}
+
+.user_desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 14pt;
+}
+
+.user_desc h3 {
+  margin-bottom: 10px;
+}
+
+.mypost_title {
+  width: 100%;
+  font-size: 24pt;
+  margin: 20px 0;
+  padding-left: 20px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.newpost {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 20px;
+  gap: 10px;
+}
+
+.newpost textarea {
+  align-self: stretch;
+  min-height: 100px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  resize: none;
+}
+
+.newpost button {
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 14pt;
+  margin-left: 20px;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  gap: 20px;
+}
+
+.post_item {
+  display: flex;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  gap: 20px;
+}
+
+.post_img {
+  width: 10%;
+}
+
+.post_text {
+  width: 100%;
+}
+
+.like_btn {
+  justify-self: end;
+  align-self: flex-end;
+  color: white;
+  font-size: 20pt;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 10px;
 }
