@@ -2,6 +2,35 @@ import React, { Component } from "react";
 import Post from "./Post";
 
 export class Mypost extends Component {
+  constructor(props) {
+    super(props);
+    this.postsData = [
+      {
+        id: 1,
+        username: "Bohdan",
+        image:
+          "https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg",
+        message: "hello durak",
+        likecount: 0,
+      },
+      {
+        id: 2,
+        username: "ihor",
+        image:
+          "https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg",
+        message: "hello durak",
+        likecount: 0,
+      },
+      {
+        id: 3,
+        username: "Alex",
+        image:
+          "https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg",
+        message: "hello durak",
+        likecount: 0,
+      },
+    ];
+  }
   render() {
     return (
       <div>
@@ -14,11 +43,17 @@ export class Mypost extends Component {
           </div>
         </div>
         <div className="posts">
-            <Post message="hi, how are you?"/>
-            <Post message="It's my second post"/>
-            <Post />
-            <Post />
-            <Post />
+          {this.props.postData.map((el) => {
+            return (
+              <Post
+                key={el.id}
+                message={el.message}
+                username={el.username}
+                img={el.image}
+                likecount={el.likecount}
+              />
+            );
+          })}
         </div>
       </div>
     );

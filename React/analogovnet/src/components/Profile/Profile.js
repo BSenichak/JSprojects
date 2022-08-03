@@ -14,17 +14,17 @@ export class Profile extends Component {
           <img
             className="user_img"
             alt="gh"
-            src="https://media.wired.com/photos/5954a299267cf6013d251f86/master/pass/catinbox_cally_by-helen-haden_4x31.jpg"
+            src={this.props.profile.img}
           />
           <div className="user_desc">
-            <h3>{"Bohdan S."}</h3>
-            <p>Date of birgth: {"15 january"}</p>
-            <p>City: {"Kyiv"}</p>
-            <p>Education: {"KNU'22, OMK'19"}</p>
-            <p>Web Site: {"http://google.com"}</p>
+            <h3>{this.props.profile.userName}</h3>
+            <p>Date of birgth: {this.props.profile.dateOfByrgth}</p>
+            <p>City: {this.props.profile.city}</p>
+            <p>Education: {this.props.profile.education}</p>
+            <p>Web Site: {this.props.profile.webSite}</p>
           </div>  
         </div>
-        <Mypost />
+        <Mypost postData={this.props.postData}/>
       </div>
     );
   }

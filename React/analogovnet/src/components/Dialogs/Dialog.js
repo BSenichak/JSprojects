@@ -11,10 +11,10 @@ export class Dialog extends Component {
           alt="dimg"
           src={this.props.image}
         />
-        <p className="dialog_text">
+        <div className="dialog_text">
           <p className="dialog_name">{this.props.name}</p>
           <p className="dialog_lastmessage">{this.props.lastmessage}</p>
-        </p>
+        </div>
       </div>
       </NavLink>
     );

@@ -84,11 +84,13 @@ body {
 
 .user {
   display: flex;
-  gap: 50px;
+  gap: 30px;
 }
 
 .user_img {
   width: 20%;
+  padding: 10px;
+  border-radius: 30px;
 }
 
 .user_desc {

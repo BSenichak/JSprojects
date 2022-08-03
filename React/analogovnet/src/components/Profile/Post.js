@@ -8,10 +8,16 @@ export class Post extends Component {
         <img
           alt="user"
           className="post_img"
-          src="https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg"
+          src={this.props.img}
         />
-        <p className="post_text">{this.props.message}</p>
-        <p className="like_btn"><AiOutlineLike /></p>
+        <div className="post_text">
+          <span className="post_username">{this.props.username}</span>
+          <br />
+          {this.props.message}
+        </div>
+        <div className="like_btn">
+          <AiOutlineLike />
+        </div>
       </div>
     );
   }
