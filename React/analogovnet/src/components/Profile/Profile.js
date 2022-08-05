@@ -11,20 +11,21 @@ export class Profile extends Component {
           className="content-header"
         />
         <div className="user">
-          <img
-            className="user_img"
-            alt="gh"
-            src={this.props.profile.img}
-          />
+          <img className="user_img" alt="gh" src={this.props.profile.img} />
           <div className="user_desc">
             <h3>{this.props.profile.userName}</h3>
             <p>Date of birgth: {this.props.profile.dateOfByrgth}</p>
             <p>City: {this.props.profile.city}</p>
             <p>Education: {this.props.profile.education}</p>
             <p>Web Site: {this.props.profile.webSite}</p>
-          </div>  
+          </div>
         </div>
-        <Mypost postData={this.props.postData}/>
+        <Mypost
+          postData={this.props.postData}
+          newPost={this.props.newPost}
+          profile={this.props.profile}
+          likePost={this.props.likePost}
+        />
       </div>
     );
   }
