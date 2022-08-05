@@ -88,7 +88,27 @@ class App extends Component {
         webSite: "http://google.com",
       },
     };
+    this.newPost = this.newPost.bind(this)
+    this.likePost = this.likePost.bind(this)
   }
+  newPost(message, userName, image, likecount) {
+    let post = {
+      id: this.state.postData.length + 1,
+      username: userName,
+      image: image,
+      message: message,
+      likecount: likecount,
+    };
+    this.setState({ postData: [ post ,...this.state.postData] });
+  }
+
+  likePost(post){
+    let id = this.state.postData.findIndex(el => el.id === post.id)
+    let newState = this.state.postData
+    newState[id] = post;
+    this.setState({postData: newState})
+  }
+
   render() {
     return (
       <div className="app-wrapper">
@@ -111,6 +131,8 @@ class App extends Component {
                 <Profile
                   profile={this.state.profile}
                   postData={this.state.postData}
+                  newPost={this.newPost}
+                  likePost={this.likePost}
                 />
               }
             />

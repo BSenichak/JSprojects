@@ -4,42 +4,21 @@ import Post from "./Post";
 export class Mypost extends Component {
   constructor(props) {
     super(props);
-    this.postsData = [
-      {
-        id: 1,
-        username: "Bohdan",
-        image:
-          "https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg",
-        message: "hello durak",
-        likecount: 0,
-      },
-      {
-        id: 2,
-        username: "ihor",
-        image:
-          "https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg",
-        message: "hello durak",
-        likecount: 0,
-      },
-      {
-        id: 3,
-        username: "Alex",
-        image:
-          "https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg",
-        message: "hello durak",
-        likecount: 0,
-      },
-    ];
+    this.state = {
+      newPostText: ""
+    }
   }
   render() {
     return (
       <div>
         <p className="mypost_title">My posts</p>
         <div className="newpost">
-          <textarea placeholder="Put your message"></textarea>
+          <textarea placeholder="Put your message" onChange={(e)=> this.setState({newPostText: e.target.value})} value={this.state.newPostText}></textarea>
           <div>
-            <button>Add post</button>
-            <button>Clear</button>
+            <button onClick={()=> {this.props.newPost(this.state.newPostText, this.props.profile.userName, this.props.profile.img, 0)
+              this.setState({newPostText: ""})
+            }}>Add post</button>
+            <button onClick={()=> this.setState({newPostText: ""})}>Clear</button>
           </div>
         </div>
         <div className="posts">
@@ -51,6 +30,7 @@ export class Mypost extends Component {
                 username={el.username}
                 img={el.image}
                 likecount={el.likecount}
+                likePost={this.props.likePost}
               />
             );
           })}

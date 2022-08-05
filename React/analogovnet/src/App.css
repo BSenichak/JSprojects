@@ -157,6 +157,7 @@ body {
 
 .post_img {
   width: 10%;
+  border-radius: 10000px;
 }
 
 .post_text {
