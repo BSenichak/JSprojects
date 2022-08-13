@@ -5,20 +5,46 @@ export class Mypost extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      newPostText: ""
-    }
+      newPostText: "",
+      err: false,
+    };
   }
+
+
   render() {
     return (
       <div>
         <p className="mypost_title">My posts</p>
         <div className="newpost">
-          <textarea placeholder="Put your message" onChange={(e)=> this.setState({newPostText: e.target.value})} value={this.state.newPostText}></textarea>
+          <textarea
+            placeholder="Put your message here..."
+            onChange={(e) => this.setState({ newPostText: e.target.value }, this.setState({err: false}))}
+            value={this.state.newPostText}
+          />
+          
           <div>
-            <button onClick={()=> {this.props.newPost(this.state.newPostText, this.props.profile.userName, this.props.profile.img, 0)
-              this.setState({newPostText: ""})
-            }}>Add post</button>
-            <button onClick={()=> this.setState({newPostText: ""})}>Clear</button>
+            <span className="err">{this.state.err?"message must have more than one symbol":""}</span>
+            
+            <button
+              onClick={() => {
+                if (this.state.newPostText.length > 0) {
+                  this.props.newPost(
+                    this.state.newPostText,
+                    this.props.profile.userName,
+                    this.props.profile.img,
+                    0
+                  );
+                  this.setState({ newPostText: "" });
+                } else {
+                  this.setState({err: true})
+                }
+              }}
+            >
+              Add post
+            </button>
+            <button onClick={() => this.setState({ newPostText: "" })}>
+              Clear
+            </button>
           </div>
         </div>
         <div className="posts">

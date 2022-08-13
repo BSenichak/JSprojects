@@ -1,0 +1,41 @@
+footer {
+    padding: 50px;
+    background-color: #25262B;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer_section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  
+  }
+  
+  .red_line{
+    border-top: 3px solid red;
+    width: 50px;
+  }
+  
+  .footer_section div{
+    display: flex;
+    gap: 10px;
+  }
+  
+  .footer_section div span {
+    padding: 15px;
+    border-radius: 10000px;
+    background-color: #525252;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer_section span{
+    transition: all 0.2s;
+  }
+  
+  .footer_section span:hover {
+    transform: translate(5px);
+  }

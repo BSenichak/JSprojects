@@ -5,6 +5,9 @@
   font-family: sans-serif;
   text-decoration: none;
 }
+textarea::-webkit-input-placeholder{
+  color: rgba(255, 255, 255, 0.434);
+}
 
 body {
   background: linear-gradient(to right, #ad8cea, #50dfb2);
@@ -162,6 +165,11 @@ body {
 
 .post_text {
   width: 100%;
+}
+
+.err {
+  color: red;
+  text-shadow: 1px 1px rgb(0, 0, 0);
 }
 
 .like_btn {
