@@ -1,53 +1,84 @@
-.header{
-    display: flex;
-    align-items:center;
-    justify-content: space-between;
-    font-size: 50px;
-    padding: 0 30px;
-    grid-column: 1/-1;
-    border-bottom: 2px solid #E3E3E3;
-    position: sticky;
-    top: 0;
-    background-color: white;
-    z-index: 9999;
-  }
-  
-  .logo_text {
-    font-weight: 1000;
-  }
-  
-  .vline {
-    height: 40px;
-    width: 1px;
-    color: gray;
-    border-left: 2px solid #E3E3E3;
-    margin: 0 50px;
-  }
-  
-  .nav_item {
-    font-size: 16px;
-    font-weight: 900;
-    width: max-content;
-    margin: 0 10px;
-    color: #252525;
-  }
-  
-  .client_block {
-    display: flex;
-    font-size: 24px;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  .shop_block {
-    display: flex;
-    align-items: center;
-    font-size: 50px;
-  }
-  
-  .user_icon {
-    object-fit: cover;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-  }
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 50px;
+  padding: 0 30px;
+  grid-column: 1/-1;
+  border-bottom: 2px solid #E3E3E3;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 9999;
+}
+
+.logo_text {
+  font-weight: 1000;
+
+}
+
+.logo_text a {
+  color: black;
+}
+
+.vline {
+  height: 40px;
+  width: 1px;
+  color: gray;
+  border-left: 2px solid #E3E3E3;
+  margin: 0 50px;
+}
+
+.nav_item {
+  font-size: 16px;
+  font-weight: 900;
+  width: max-content;
+  margin: 0 10px;
+  color: #252525;
+}
+
+.nav_item a{
+  color: #252525;
+}
+
+a.active{
+  color: green;
+  border-bottom: 2px dashed green;
+}
+
+.client_block {
+  display: flex;
+  font-size: 24px;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.shop_block {
+  display: flex;
+  align-items: center;
+  font-size: 50px;
+}
+
+.user_icon {
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.basket_counter {
+  position: absolute;
+  left: 15px;
+  top: 3px;
+  font-size: 12px;
+  font-weight: 1000;
+  color: white;
+  background-color: green;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

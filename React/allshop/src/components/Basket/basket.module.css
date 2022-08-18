@@ -1,0 +1,208 @@
+.wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+} 
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.basket {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 80%;
+    height: 90%;
+    margin: 20px auto;
+    border-radius: 15px;
+    background-color: white;
+    z-index: 1;
+}
+
+.basket_title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    border-bottom: 1px solid lightgray;
+    padding: 10px;
+}
+
+.basket_title svg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 22px;
+    width: 22px;
+}
+
+.basket_list{
+    display: flex;
+    font-size: 14px;
+    flex-direction: column;
+    align-items: stretch;
+    
+}
+
+.scroller {
+    overflow-y: scroll;
+    height: 70vh;
+}
+
+.scroller::-webkit-scrollbar {
+    background-color: white;
+}
+
+.scroller::-webkit-scrollbar-thumb{
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+.clear {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.claerimg{
+    width: 40%;
+    margin-top: 50px;
+}
+
+.clear_title{
+    font-size: 28px;
+}
+
+.clear_sub_title{
+    font-size: 14pt;
+    color: lightslategray;
+}
+
+.clear_all_btn {
+    align-self: flex-end;
+    padding: 20px;
+    color: steelblue;
+    font-weight: 1000;
+}
+
+.clear_all_btn:hover {
+    color: palevioletred;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 10px;
+}
+
+.image {
+    grid-row: 1/-1;
+    display: flex;
+    justify-content: center;
+}
+
+.image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    
+}
+
+.name {
+    font-size: 18px;
+    font-weight: 1000;
+}
+
+.deletebtn {
+    font-size: 30px;
+    text-align: end;
+    margin-right: 20px;
+    color: rgba(255, 0, 0, 0.441);
+}
+
+.deletebtn:hover {
+    color: red;
+}
+
+.countform{
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end;
+}
+
+.price {
+    text-align: end;
+    margin-right: 20px;
+    font-size: 24px;
+    color: green;
+    font-weight: 500;
+}
+
+.countbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    font-size: 30px;
+}
+
+.countform input {
+    padding: 10px;
+    border: 1px solid lightslategray;
+    border-radius: 5px;
+    width: 50px;
+    transition: all 0.2s;
+    font-size: 20px;
+    text-align: center;
+}
+
+.countform input:focus {
+    outline: none;
+    box-shadow: 0 0 5px green;
+}
+
+.order_sect {
+    border: 2px solid #00A046;
+    border-radius: 5px;
+    font-size: 20px;
+    display: flex;
+    gap: 20px;
+    float: right;
+    margin-right: 30px;
+    padding: 15px 20px;
+    background-color: #E5F5EC;
+}
+
+.sun_price{
+    font-size: 40px;
+    font-weight: 1000;
+}
+
+.sun_price span {
+    font-size: 25px;
+}
+
+.order_btn{
+    font-size: 22px;
+    background-color: #00A046;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    border-radius: 10px;
+    font-weight: 1000;
+}
+
+.order_btn a {
+    color: white;
+}

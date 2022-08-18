@@ -71,15 +71,14 @@ function Catalog(props) {
       />
       <div className={styles.results}>
         <div className={styles.result_title}>
-          Результат пошуку
-          <span>({props.items.length} товари)</span>
+          Результат пошуку  
         </div>
         <div className={styles.tiles}>
           {filterCateg.length === 0
             ? activeCategory === 1
               ? props.items
                   .sort((a, b) => (a.prise > b.prise ? -1 : 1))
-                  .map((item) => {
+                  .map((item, index, arr) => {
                     return <CatalogItem key={item.id} item={item} />;
                   })
               : activeCategory === 2

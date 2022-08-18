@@ -1,0 +1,128 @@
+.main {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    background-color: #F6F6F6;
+}
+
+.image_section{
+    grid-column: 1/2;
+    padding: 20px;
+    
+}
+
+.tovar_img {
+    object-fit: contain;
+    width: 100%;
+    border-radius: 30px;
+}
+
+.info_section {
+    grid-column: 2/3;
+    padding: 20px;
+}
+
+.tov_name {
+    font-size: 40px;
+}
+
+.tov_price {
+    font-size: 32px;
+    color: red;
+    font-weight: 1000;
+}
+
+.by_sect {
+    border: 1px solid lightgrey;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.haveInStore {
+    padding: 5px 10px;
+    color: green;
+    background-color: #c9fbda;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    width: max-content;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.buy_btn {
+    padding: 8px 15px;
+    background-color: #00A046;
+    border-radius: 5px;
+    color: white;
+    font-weight: 1000;
+    cursor: pointer;
+}
+
+.buyOpt_btn {
+    padding: 8px 15px;
+    background-color: #3E77AA;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+.delivery_sect {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 15px;
+}
+
+.delivery_title {
+    border-bottom: 1px solid lightgray;
+    padding: 10px 15px;
+}
+
+.delivery_text {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+}
+
+.money_sect {
+    border: 1px solid lightgrey;
+    border-radius: 5px 5px 0 0;
+    padding:  10px 15px;
+    margin-top: 15px;
+    font-size: 14px;
+    display: flex;
+    gap: 15px;
+}
+
+.guarantee_sect{
+    border: 1px solid lightgrey;
+    border-radius: 0 0 5px 5px ;
+    border-top: none;
+    padding:  10px 15px;
+    font-size: 14px;
+    display: flex;
+    gap: 15px;
+}
+
+.icones {
+    font-size: 28px;
+}
+
+.description{
+    padding: 20px;
+    grid-column: 1/-1;
+}
+
+.description p::first-letter {
+    margin-left: 30px;
+}
