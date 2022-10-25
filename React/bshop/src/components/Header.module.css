@@ -1,0 +1,87 @@
+.header {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    height: 12vh;
+}
+
+.logo {
+    background-color: var(--one);
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 50px;
+    align-items: center;
+    color: var(--whiteText);
+    font-size: 7vh;
+    font-family: 'Comforter Brush', cursive;
+    position: relative;
+}
+
+.logoCircle {
+    background-color: aliceblue;
+    width: 7vh;
+    height: 7vh;
+    border-radius: 50%;
+    opacity: 0.1;
+    position: absolute;
+    left: 120px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2vw ;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.348);
+}
+
+a.pageLink {
+    color: var(--blackText);
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.linksBar {
+    display: flex;
+    gap: 3vw;
+    
+}
+
+.searthBar input {
+    outline: none;
+    border: none;
+    width: 20vw;
+}
+
+.searthBar {
+    border: 1px solid rgba(128, 128, 128, 0.348);
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.searthBar svg {
+   padding-right: 5px;
+   font-size: 10pt;
+   color: rgba(128, 128, 128, 0.909);
+}
+
+.userBar{
+    display: flex;
+    align-items: center;
+    font-size: 2.5vh;
+}
+
+.userImg {
+    height: 5vh;
+}
+
+.vr {
+    height: 3vh;
+    width: 1px;
+    background-color: rgba(128, 128, 128, 0.348);
+    margin: 2vh;
+}
+
+.trBtn {
+    font-size: 1.5vh;
+    padding-left: 5px;
+}

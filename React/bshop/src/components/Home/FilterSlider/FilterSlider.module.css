@@ -1,0 +1,55 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputBox {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.inputBox input {
+    width: 20%;
+    text-align: center;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid gray;
+    font-size: 2vh;
+    color: var(--two);
+    border-radius: 1vh;
+}
+
+.inputBox input::-webkit-outer-spin-button,
+.inputBox input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.btn {
+    width: 20%;
+    text-align: center;
+    padding: 10px;
+    background-color: #80808031;
+    border: 1px solid gray;
+    font-size: 2vh;
+    color: var(--two);
+    border-radius: 1vh;
+    transition: all 0.3s;
+}
+
+.btnactive {
+    border-color: skyblue;
+    color: skyblue;
+}
+
+.scont{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.tbs {
+    box-shadow: none;
+}

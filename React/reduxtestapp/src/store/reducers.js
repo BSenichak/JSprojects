@@ -1,9 +1,10 @@
-import { SWITCH_LAMP, CHANGE_TEXT, ADD_NEW_ITEM } from "./actionNames"
+import { SWITCH_LAMP, CHANGE_TEXT, ADD_NEW_ITEM, ADD_USER } from "./actionNames"
 
 const initalState = {
     lampState: false,
     text: "",
-    items: []
+    items: [],
+    users: []
 }
 
 export function generalReducer(store = initalState, action){
@@ -14,6 +15,8 @@ export function generalReducer(store = initalState, action){
             return {...store, lampState: !store.lampState}
         case ADD_NEW_ITEM:
             return { ...store, items: [...store.items, action.payload], text: ""}
+        case ADD_USER:
+            return { ...store, items: [...store.users, JSON.parse(action.payload) ]}
         default:
             return store
     }

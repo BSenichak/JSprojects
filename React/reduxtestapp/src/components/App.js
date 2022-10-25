@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 import { connect } from "react-redux";
-import { addNewItem, changeText, switchLamp } from "../store/actions";
+import { addNewItem, addUser, changeText, switchLamp } from "../store/actions";
 
 export const App = (props) => {
   return (
@@ -13,7 +13,7 @@ export const App = (props) => {
         type="text"
         placeholder="text"
         value={props.text}
-        onChange={(event) => props.changeText(event)}
+        onChange={props.changeText}
       />
       <p>{props.text}</p>
       <div
@@ -28,6 +28,11 @@ export const App = (props) => {
           return <div>{el}</div>;
         })}
       </div>
+      <div onClick={props.loadUsers}>Click me to load users</div>
+      <div>
+        {props.users.map(el=><p key={1}>{JSON.parse(el.id)}</p>)}
+        {/*JSON.stringify(props.users)*/}
+      </div>
     </div>
   );
 };
@@ -37,6 +42,7 @@ const mapStateToProps = (state) => {
     lampState: state.lampState,
     text: state.text,
     items: state.items,
+    users: state.users
   };
 };
 
@@ -45,6 +51,7 @@ const mapDispatchToProps = (dispatch) => {
     switchLampState: () => dispatch(switchLamp()),
     changeText: (event) => dispatch(changeText(event.target.value)),
     addItem: (text) => dispatch(addNewItem(text)),
+    loadUsers: () => dispatch(addUser())
   };
 };
 
