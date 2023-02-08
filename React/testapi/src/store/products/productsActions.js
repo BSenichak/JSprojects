@@ -12,7 +12,7 @@ export const addProduct = (sortType = "desc", category = null) => {
     axios
       .get(
         `https://fakestoreapi.com/products/${
-          category !== null ?(`category/${category}`):""
+          category !== null ? `category/${category}` : ""
         }?sort=${sortType}`
       )
       .then((res) => {
@@ -46,5 +46,5 @@ export const setSort = (data) => ({
 });
 
 export const clearList = () => ({
-  type: CLEAR_LIST
+  type: CLEAR_LIST,
 });
