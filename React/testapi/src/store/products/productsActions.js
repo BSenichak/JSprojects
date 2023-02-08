@@ -4,12 +4,17 @@ export const ADD_PRODUCT_SUCCESS = "ADD_PRODUCT_SUCCESS";
 export const ADD_PRODUCT_FAILURE = "ADD_PRODUCT_FAILURE";
 export const ADD_PRODUCT_STARTED = "ADD_PRODUCT_STARTED";
 export const SET_SORT = "SET_SORT";
+export const CLEAR_LIST = "CLEAR_LIST";
 
-export const addProduct = (sortType="desc") => {
+export const addProduct = (sortType = "desc", category = null) => {
   return (dispatch) => {
     dispatch(addProductStarted());
     axios
-      .get(`https://fakestoreapi.com/products?sort=${sortType}`)
+      .get(
+        `https://fakestoreapi.com/products/${
+          category !== null ?(`category/${category}`):""
+        }?sort=${sortType}`
+      )
       .then((res) => {
         dispatch(addProductSuccess(res.data));
       })
@@ -37,5 +42,9 @@ const addProductFailure = (error) => ({
 
 export const setSort = (data) => ({
   type: SET_SORT,
-  payload: data
+  payload: data,
+});
+
+export const clearList = () => ({
+  type: CLEAR_LIST
 });

@@ -3,6 +3,7 @@ import {
     ADD_PRODUCT_FAILURE,
     ADD_PRODUCT_STARTED,
     SET_SORT,
+    CLEAR_LIST,
   } from './productsActions';
   
   const initialState = {
@@ -36,6 +37,11 @@ import {
         return {
           ...state,
           sortType: action.payload,
+          todos: []
+        };
+      case CLEAR_LIST:
+        return {
+          ...state,
           todos: []
         };
       default:

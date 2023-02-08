@@ -1,17 +1,24 @@
 import React from "react";
 import { connect } from "react-redux";
 import { useDispatch, useSelector } from "react-redux";
-import { addProduct, setSort } from "../store/products/productsActions";
+import { addProduct, clearList, setSort } from "../store/products/productsActions";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { clearData } from "../store/product/productActions";
+import {
+  loadCategories,
+  setActiveCategory,
+} from "../store/categories/categoriesActions";
 
 export const Products = (props) => {
   const dispatch = useDispatch();
   const products = useSelector((store) => store.products.todos);
   const sortType = useSelector((store) => store.products.sortType);
+  const categories = useSelector((store) => store.categories.categories);
+  const activeCategory = useSelector((store) => store.categories.active);
   useEffect(() => {
-    dispatch(addProduct(""));
+    dispatch(addProduct("asc"));
+    dispatch(loadCategories());
   }, [dispatch]);
   return (
     <div className="wrapper">
@@ -29,11 +36,26 @@ export const Products = (props) => {
           className={`sortBtn ${sortType === "asc" && "active"}`}
           onClick={() => {
             dispatch(setSort("asc"));
-            dispatch(addProduct("asc"));
+            dispatch(addProduct("asc", activeCategory));
           }}
         >
           First for men
         </div>
+      </div>
+      <div className="categories">
+        {categories.map((el) => (
+          <div
+            key={el}
+            className={`catBtn ${activeCategory === el && "active"}`}
+            onClick={() => {
+              dispatch(setActiveCategory(el))
+              dispatch(clearList());
+              dispatch(addProduct("desc", el));
+            }}
+          >
+            {el.toUpperCase()}
+          </div>
+        ))}
       </div>
       {
         <div

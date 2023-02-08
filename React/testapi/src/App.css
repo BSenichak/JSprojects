@@ -280,3 +280,28 @@ footer {
 .sortBtn.active{
   border: 3px solid black;
 }
+
+.categories {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 3rem;
+  border-radius: 30px;
+  background-color: white;
+  gap: 0.5rem;
+  padding: 0 0.5rem;
+}
+
+.catBtn {
+  padding:  0.5rem 1rem;
+  background: purple;
+  color: white;
+  border-radius: 1.5rem;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.catBtn.active{
+  background-color: blue;
+}
