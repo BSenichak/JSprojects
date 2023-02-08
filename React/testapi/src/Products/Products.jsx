@@ -17,7 +17,7 @@ export const Products = (props) => {
   const categories = useSelector((store) => store.categories.categories);
   const activeCategory = useSelector((store) => store.categories.active);
   useEffect(() => {
-    dispatch(addProduct("asc"));
+    dispatch(addProduct("asc", activeCategory));
     dispatch(loadCategories());
   }, [dispatch]);
   return (
