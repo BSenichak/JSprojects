@@ -256,3 +256,27 @@ footer {
   font-size: 1rem;
   background-color: white;
 }
+
+.sortBar {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 3rem;
+  border-radius: 30px;
+  background-color: white;
+  gap: 0.5rem;
+  padding: 0 0.5rem;
+}
+
+.sortBtn {
+  padding:  0.5rem 3rem;
+  background: purple;
+  color: white;
+  border-radius: 1.5rem;
+  border: 3px solid transparent;
+}
+
+.sortBtn.active{
+  border: 3px solid black;
+}

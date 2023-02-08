@@ -1,18 +1,40 @@
 import React from "react";
 import { connect } from "react-redux";
 import { useDispatch, useSelector } from "react-redux";
-import { addProduct } from "../store/products/productsActions";
+import { addProduct, setSort } from "../store/products/productsActions";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { clearData } from "../store/product/productActions";
 
 export const Products = (props) => {
   const dispatch = useDispatch();
   const products = useSelector((store) => store.products.todos);
+  const sortType = useSelector((store) => store.products.sortType);
   useEffect(() => {
     dispatch(addProduct(""));
-  },[dispatch]);
+  }, [dispatch]);
   return (
     <div className="wrapper">
+      <div className="sortBar">
+        <div
+          className={`sortBtn ${sortType === "desc" && "active"}`}
+          onClick={() => {
+            dispatch(setSort("desc"));
+            dispatch(addProduct("desc"));
+          }}
+        >
+          First for women
+        </div>
+        <div
+          className={`sortBtn ${sortType === "asc" && "active"}`}
+          onClick={() => {
+            dispatch(setSort("asc"));
+            dispatch(addProduct("asc"));
+          }}
+        >
+          First for men
+        </div>
+      </div>
       {
         <div
           className="loader"
@@ -27,7 +49,12 @@ export const Products = (props) => {
         </div>
       }
       {products.map((el) => (
-        <Link to={`/product/${el.id}`} key={el.id} className="product">
+        <Link
+          to={`/product/${el.id}`}
+          key={el.id}
+          className="product"
+          onClick={() => dispatch(clearData())}
+        >
           <h3>{el.title}</h3>
           <img alt="dd" src={el.image} />
           <div className="priceBar">

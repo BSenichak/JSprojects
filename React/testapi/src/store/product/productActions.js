@@ -3,6 +3,7 @@ import axios from "axios";
 export const LOAD_PRODUCT_START = "LOAD_PRODUCT_START"
 export const LOAD_PRODUCT_SUCCESS = "LOAD_PRODUCT_SUCCESS"
 export const LOAD_PRODUCT_FAILURE = "LOAD_PRODUCT_FAILURE"
+export const CLEAR_DATA = "CLEAR_DATA"
 
 export const loadProduct = (id) => {
     return dispatch => {
@@ -33,5 +34,10 @@ export const loadProductSuccess = (data) =>{
     return {
         type: LOAD_PRODUCT_SUCCESS,
         payload: data
+    }
+}
+export const clearData = () =>{
+    return {
+        type: CLEAR_DATA,
     }
 }

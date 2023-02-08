@@ -1,4 +1,4 @@
-import { LOAD_PRODUCT_FAILURE, LOAD_PRODUCT_START, LOAD_PRODUCT_SUCCESS } from "./productActions"
+import { CLEAR_DATA, LOAD_PRODUCT_FAILURE, LOAD_PRODUCT_START, LOAD_PRODUCT_SUCCESS } from "./productActions"
 
 export const initalState = {
     data: {
@@ -34,6 +34,22 @@ export default function ProductReducer(store=initalState, action){
                 ...store,
                 loading: false,
                 error: action.payload
+            }
+        case CLEAR_DATA:
+            return {
+                ...store,
+                loading: false,
+                data: {
+                    title: null,
+                    price: 0,
+                    description: "",
+                    category: "",
+                    rating: {
+                        rate: "",
+                        count: 0
+                    },
+                    image: "blank"
+                }
             }
         default:
             return store

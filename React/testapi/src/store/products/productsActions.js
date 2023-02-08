@@ -3,12 +3,13 @@ import axios from "axios";
 export const ADD_PRODUCT_SUCCESS = "ADD_PRODUCT_SUCCESS";
 export const ADD_PRODUCT_FAILURE = "ADD_PRODUCT_FAILURE";
 export const ADD_PRODUCT_STARTED = "ADD_PRODUCT_STARTED";
+export const SET_SORT = "SET_SORT";
 
-export const addProduct = () => {
+export const addProduct = (sortType="desc") => {
   return (dispatch) => {
     dispatch(addProductStarted());
     axios
-      .get(`https://fakestoreapi.com/products`)
+      .get(`https://fakestoreapi.com/products?sort=${sortType}`)
       .then((res) => {
         dispatch(addProductSuccess(res.data));
       })
@@ -32,4 +33,9 @@ const addProductFailure = (error) => ({
   payload: {
     error,
   },
+});
+
+export const setSort = (data) => ({
+  type: SET_SORT,
+  payload: data
 });

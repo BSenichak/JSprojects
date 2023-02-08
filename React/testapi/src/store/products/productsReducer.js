@@ -2,12 +2,14 @@ import {
     ADD_PRODUCT_SUCCESS,
     ADD_PRODUCT_FAILURE,
     ADD_PRODUCT_STARTED,
+    SET_SORT,
   } from './productsActions';
   
   const initialState = {
     loading: false,
     todos: [],
-    error: null
+    error: null,
+    sortType: "desc"
   };
   
   export default function todosReducer(state = initialState, action) {
@@ -29,6 +31,12 @@ import {
           ...state,
           loading: false,
           error: action.payload.error
+        };
+      case SET_SORT:
+        return {
+          ...state,
+          sortType: action.payload,
+          todos: []
         };
       default:
         return state;
