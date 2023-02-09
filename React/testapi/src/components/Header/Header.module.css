@@ -1,14 +1,20 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 5rem;
+  border-radius: 10px;
+  margin: 0.2rem 0.5rem;
+}
+
 .header a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 5rem;
-  border-radius: 30px;
-  margin: 0.2rem 0.5rem;  
   font-size: 3rem;
-  background-color: white;
   gap: 1rem;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 header img {
@@ -16,8 +22,8 @@ header img {
   display: block;
 }
 
-@media (max-width: 400px){
+@media (max-width: 400px) {
   .header a {
     font-size: 2rem;
   }
-} 
+}
