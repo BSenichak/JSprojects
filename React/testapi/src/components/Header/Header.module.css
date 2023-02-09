@@ -1,0 +1,23 @@
+.header a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  border-radius: 30px;
+  margin: 0.2rem 0.5rem;  
+  font-size: 3rem;
+  background-color: white;
+  gap: 1rem;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header img {
+  height: 3rem;
+  display: block;
+}
+
+@media (max-width: 400px){
+  .header a {
+    font-size: 2rem;
+  }
+} 
