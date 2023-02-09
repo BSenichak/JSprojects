@@ -4,12 +4,14 @@ import { loadProduct } from "../store/product/productActions";
 import { useLocation } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import s from "./Product.module.css"
+import { addProductToCart } from "../store/cart/cartActions";
 
 export const Product = (props) => {
   const dispatch = useDispatch();
   
   const link = useLocation();
   const data = useSelector((store) => store.product.data);
+  const cartItems = useSelector((state) => state.cart.cartItems);
 
   useEffect(() => {
     dispatch(loadProduct(link.pathname.slice(9)));
@@ -40,7 +42,7 @@ export const Product = (props) => {
               <p>{data.rating.rate}</p>
               <p className={s.ratingCount}>count: {data.rating.count}</p>
             </div>
-            <div className={s.btn}>ADD TO CART</div>
+            <div className={s.btn} onClick={cartItems.indexOf(data.id)===-1?()=>dispatch(addProductToCart(data.id)):undefined}>ADD TO CART</div>
           </div>
         </div>
       ) : (

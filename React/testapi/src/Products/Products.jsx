@@ -16,12 +16,13 @@ export const Products = (props) => {
 
   const products = useSelector((store) => store.products.todos);
   const activeCategory = useSelector((store) => store.categories.active);
+  const sortType = useSelector((store) => store.products.sortType);
 
   useEffect(() => {
     dispatch(clearList());
-    dispatch(addProduct("asc", activeCategory));
+    dispatch(addProduct(sortType, activeCategory));
     dispatch(loadCategories());
-  }, [dispatch, activeCategory]);
+  }, [dispatch, activeCategory, sortType]);
 
   return (
     <div className={s.wrapper}>
