@@ -1,9 +1,14 @@
 import React, { useEffect } from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
-import { clearCart, loadCartProduct, removeCartItem, toggleCartState } from "../../store/cart/cartActions";
+import {
+  clearCart,
+  loadCartProduct,
+  removeCartItem,
+  toggleCartState,
+} from "../../store/cart/cartActions";
 import s from "./Cart.module.css";
-import { BsTrash } from "react-icons/bs"
-import { Link } from "react-router-dom"
+import { BsTrash } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 export const Cart = (props) => {
   const dispatch = useDispatch();
@@ -15,7 +20,10 @@ export const Cart = (props) => {
     cartItems.forEach((el) => dispatch(loadCartProduct(el)));
   }, [cartItems, dispatch]);
   return (
-    <div className={s.cartWrapper} onMouseLeave={()=>dispatch(toggleCartState())}>
+    <div
+      className={s.cartWrapper}
+      onMouseLeave={() => dispatch(toggleCartState())}
+    >
       {cartItems.length === 0 ? (
         <div className={s.emptyWrapper}>
           <img src="/images/empty.gif" alt="cartempty" />
@@ -29,15 +37,21 @@ export const Cart = (props) => {
                 <div className={s.imageBox}>
                   <img src={el.image} alt="cartItem" />
                 </div>
-                <Link className={s.itemName} to={`/product/${el.id}`}>{el.title}</Link>
-                <BsTrash onClick={()=>dispatch(removeCartItem(el.id))}/>
+                <Link className={s.itemName} to={`/product/${el.id}`}>
+                  {el.title}
+                </Link>
+                <div className={s.price}>
+                  {el.price}$
+                </div>
+                <BsTrash onClick={() => dispatch(removeCartItem(el.id))} />
               </div>
             ))}
-            {loading&&<img src="/images/loader.gif" alt="loader" className={s.loader}/>}
-            <div className={s.orderBtn}>TO ORDER!</div>
+          {loading && (
+            <img src="/images/loader.gif" alt="loader" className={s.loader} />
+          )}
+          <div className={s.orderBtn}>TO ORDER!</div>
         </div>
       )}
-      
     </div>
   );
 };

@@ -1,21 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { loadProduct } from "../store/product/productActions";
 import { useLocation } from "react-router-dom";
 import Loader from "../Loader/Loader";
-import s from "./Product.module.css"
+import s from "./Product.module.css";
 import { addProductToCart } from "../store/cart/cartActions";
 
 export const Product = (props) => {
   const dispatch = useDispatch();
-  
+
   const link = useLocation();
   const data = useSelector((store) => store.product.data);
   const cartItems = useSelector((state) => state.cart.cartItems);
+  const [clientRating, setClientRating] = useState(0);
+  const [clientRatingChoosed, setClientRatingChoosed] = useState(0);
 
   useEffect(() => {
     dispatch(loadProduct(link.pathname.slice(9)));
-  }, [dispatch, link]);
+  }, [dispatch, link, cartItems, data.id]);
 
   return (
     <div>
@@ -32,21 +34,40 @@ export const Product = (props) => {
             </div>
             <p>{data.description}</p>
             <div className={s.ratingBar}>
-              Rating: 
-              <div className={s.ratingWrapper}>
+              Rating:
+              <div
+                className={s.ratingWrapper}
+                onMouseMove={(event) =>setClientRating(event.clientX - event.target.getBoundingClientRect().left)}
+                onClick={()=>setClientRatingChoosed(clientRating)}
+                onMouseLeave={()=>setClientRating(0)}
+              >
                 <div
                   className={s.rating}
                   style={{ width: `${data.rating.rate * 20}%` }}
-                ></div>
+                />
+                <div className={s.clientRating} style={{width: `${clientRating/2}%`}}/>
+                <div className={s.clientRatingChoosed} style={{width: `${clientRatingChoosed/2}%`}}/>
               </div>
               <p>{data.rating.rate}</p>
               <p className={s.ratingCount}>count: {data.rating.count}</p>
             </div>
-            <div className={s.btn} onClick={cartItems.indexOf(data.id)===-1?()=>dispatch(addProductToCart(data.id)):undefined}>ADD TO CART</div>
+            <button
+              className={`${s.btn} ${
+                cartItems.indexOf(data.id) !== -1 ? s.add : ""
+              }`}
+              onClick={
+                cartItems.indexOf(data.id) === -1
+                  ? () => dispatch(addProductToCart(data.id))
+                  : undefined
+              }
+            >
+              <span className={s.notadded}>ADD TO CART</span>
+              <span className={s.added}>ADDED TO CART</span>
+            </button>
           </div>
         </div>
       ) : (
-        <Loader/>
+        <Loader />
       )}
     </div>
   );

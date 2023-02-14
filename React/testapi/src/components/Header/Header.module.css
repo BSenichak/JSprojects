@@ -58,9 +58,17 @@ header img {
   border-radius: 50%;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .header a {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    flex-grow: 1;
+  }
+  .blank {
+    display: none;
+  }
+  .header {
+    justify-content: space-around;
+
   }
 }
 
