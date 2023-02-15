@@ -1,0 +1,67 @@
+.wrapper {
+    min-height: 75vh;
+    background: white;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.registerWrapper, .loginWrapper {
+    width: 49%;
+}
+
+.owerlapPanel {
+    position: absolute;
+    z-index: 1;
+    background-color: gold;
+    width: 49%;
+    height: 95%;
+    top: 10px;
+    left: 50%;
+    transition: left 0.5s;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    gap: 1rem;
+}
+
+.owerlapPanel > p {
+    font-size: larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.owerlapPanel > a {
+    width: 80%;
+    background-color: white;
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.registerWrapper form{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 5rem;
+    justify-content: center;
+}
+
+.loginWrapper form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 5rem;
+}
+input{
+    margin-bottom: 1rem;
+}
+
+input.err {
+    outline-color: red;
+    border-color: red;
+    box-shadow: 0 0 5px red;
+}

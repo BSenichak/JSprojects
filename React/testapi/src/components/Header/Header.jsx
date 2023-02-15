@@ -6,10 +6,13 @@ import { BsCart2 } from "react-icons/bs";
 import { FiUser } from "react-icons/fi";
 import { toggleCartState } from "../../store/cart/cartActions";
 import Cart from "../Cart/Cart";
+import UserWindow from "../UserWindow/UserWindow";
+import { toggleStateUserWindow } from "../../store/userWindow/userWindowActions";
 
 export const Header = (props) => {
   const dispatch = useDispatch();
   const cartState = useSelector((state) => state.cart.cartState);
+  const userWindowState = useSelector((state) => state.userWindow.windowState);
   const cartItems = useSelector((state) => state.cart.cartItems);
 
   return (
@@ -28,7 +31,8 @@ export const Header = (props) => {
           )}
         </div>
         <div className={s.btn}>
-          <FiUser />
+          <FiUser onClick={() => dispatch(toggleStateUserWindow())} />
+          {userWindowState&&<UserWindow/>}
         </div>
       </div>
     </header>

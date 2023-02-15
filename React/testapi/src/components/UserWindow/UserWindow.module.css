@@ -1,0 +1,41 @@
+.wrapper {
+  position: absolute;
+  background-color: white;
+  width: 300px;
+  right: -0.2rem;
+  border-radius: 10px;
+  padding: 0.5rem;
+  box-shadow: 0 0 5px black;
+  z-index: 999;
+}
+
+.notAuthWrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.descNotAuth {
+  font-size: small;
+  color: lightgrey;
+}
+
+a.btnNotAuth {
+  padding: 0.8rem 0;
+  width: 90%;
+  text-align: center;
+  background-color: lightsalmon;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 800;
+  color: white;
+  transition: background-color 0.5s;
+  font-size: medium;
+}
+
+a.btnNotAuth:hover {
+  background-color: orangered;
+}
