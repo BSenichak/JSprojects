@@ -7,6 +7,8 @@ export const REGISTER = "REGISTER";
 export const START_REGISTER = "START_REGISTER";
 export const SUCCESS_REGISTER = "SUCCESS_REGISTER";
 export const FAILUED_REGISTER = "FAILUED_REGISTER";
+export const LOAD_TOKEN = "LOAD_TOKEN";
+export const UNLOGIN = "UNLOGIN";
 
 export const login = (username, password) => {
   return (dispatch) => {
@@ -86,3 +88,15 @@ export const successRegister = (data) => {
     payload: data,
   };
 };
+
+export const loadToken = () =>{
+  return {
+    type: LOAD_TOKEN,
+  }
+}
+
+export const unLogin = () =>{
+  return {
+    type: UNLOGIN,
+  }
+}

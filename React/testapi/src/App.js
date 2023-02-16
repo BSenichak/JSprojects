@@ -7,21 +7,15 @@ import Footer from "./components/Footer/Footer";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setCartItems } from "./store/cart/cartActions";
-import { setAutorizedState } from "./store/userWindow/userWindowActions";
 import AuthPage from "./components/AuthPage/AuthPage";
+import { loadToken } from "./store/auth/authActions";
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     window.localStorage.getItem("cart") !== null &&
       dispatch(setCartItems(JSON.parse(window.localStorage.getItem("cart"))));
-    window.localStorage.getItem("authState") !== null
-      ? dispatch(setAutorizedState(false))
-      : dispatch(
-          setAutorizedState(
-            JSON.parse(window.localStorage.getItem("authState"))
-          )
-        );
+      dispatch(loadToken())
   },[dispatch]);
   const link = useLocation();
   console.log(link);

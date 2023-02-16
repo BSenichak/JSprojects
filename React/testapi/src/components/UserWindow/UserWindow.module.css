@@ -39,3 +39,44 @@ a.btnNotAuth {
 a.btnNotAuth:hover {
   background-color: orangered;
 }
+
+.loader {
+  width: 100%;
+  height: fit-content;
+}
+
+.autorizedWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.autorizedWrapper img {
+  width: 50%;
+  border-radius: 50%;
+  height: fit-content;
+}
+
+.autorizedWrapper p {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 1.2rem 0;
+  font-size: 1.5rem;
+  font-weight: 1000;
+}
+
+.autorizedWrapper > div {
+  width: 100%;
+  padding: 1rem 0;
+  background-color: orange;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 1000;
+  transition: background-color 0.5s;
+  cursor: pointer;
+}
+
+.autorizedWrapper > div:hover {
+  background-color: lightsalmon;
+}

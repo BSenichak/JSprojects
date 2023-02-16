@@ -1,4 +1,4 @@
-import { FAILUED_LOGIN, FAILUED_REGISTER, START_LOGIN, START_REGISTER, SUCCESS_LOGIN, SUCCESS_REGISTER } from "./authActions";
+import { FAILUED_LOGIN, FAILUED_REGISTER, LOAD_TOKEN, START_LOGIN, START_REGISTER, SUCCESS_LOGIN, SUCCESS_REGISTER, UNLOGIN } from "./authActions";
 
 const initalstate = {
     loginLoading: false,
@@ -21,6 +21,7 @@ export default function authReducer(state=initalstate, action){
                 error: action.payload
             }
         case SUCCESS_LOGIN:
+            window.localStorage.setItem("token", action.payload.token);
             return {
                 ...state,
                 loginLoading: false,
@@ -39,11 +40,23 @@ export default function authReducer(state=initalstate, action){
                 regError: action.payload
             }
         case SUCCESS_REGISTER:
+            window.localStorage.setItem("token", action.payload.token);
             return {
                 ...state,
                 registerLoading: false,
                 token: "hello world",
                 regError: null,
+            }
+        case LOAD_TOKEN:
+            return {
+                ...state,
+                token: window.localStorage.getItem('token') !== null ? window.localStorage.getItem('token'): null
+            }
+        case UNLOGIN:
+            window.localStorage.removeItem('token')
+            return {
+                ...state,
+                token: null
             }
             
         default:
