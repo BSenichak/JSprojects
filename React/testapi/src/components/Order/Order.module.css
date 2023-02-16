@@ -1,0 +1,27 @@
+.wrapper {
+    min-height: 80vh;
+    background-color: white;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    margin:  1rem 3rem;
+}
+
+.item img {
+    height: 7rem;
+}
+
+.item input{
+    width: 3rem;
+    text-align: center;
+}

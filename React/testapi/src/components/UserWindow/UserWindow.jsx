@@ -20,7 +20,7 @@ export const UserWindow = (props) => {
   }, [dispatch]);
 
   return (
-    <div className={s.wrapper}>
+    <div className={s.wrapper} onMouseLeave={()=>dispatch(toggleStateUserWindow())}>
       {!autorized ? (
         <div className={s.notAuthWrapper}>
           <div className={s.descNotAuth}>If you have an account, login in</div>

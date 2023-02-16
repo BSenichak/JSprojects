@@ -59,7 +59,7 @@ a.itemName:hover {
   text-decoration: underline;
 }
 
-.orderBtn {
+a.orderBtn {
   width: 100%;
   background-color: lawngreen;
   height: 4rem;
@@ -68,6 +68,7 @@ a.itemName:hover {
   justify-content: center;
   align-items: center;
   font-weight: bolder;
+  font-size: large;
 }
 
 .loader {

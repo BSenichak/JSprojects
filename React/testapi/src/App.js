@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { setCartItems } from "./store/cart/cartActions";
 import AuthPage from "./components/AuthPage/AuthPage";
 import { loadToken } from "./store/auth/authActions";
+import Order from "./components/Order/Order";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" element={<Products />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/auth/*" element={<AuthPage/>} />
+        <Route path="/order" element={<Order/>} />
       </Routes>
       <Footer />
     </div>

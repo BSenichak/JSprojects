@@ -49,7 +49,7 @@ export const Cart = (props) => {
           {loading && (
             <img src="/images/loader.gif" alt="loader" className={s.loader} />
           )}
-          <div className={s.orderBtn}>TO ORDER!</div>
+          <Link to={"/order"} className={s.orderBtn}>TO ORDER!</Link>
         </div>
       )}
     </div>
